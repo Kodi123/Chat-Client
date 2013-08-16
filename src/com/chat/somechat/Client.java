@@ -1,18 +1,16 @@
 package com.chat.somechat;
 
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.SystemColor;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextArea;
-import java.awt.GridBagConstraints;
-import java.awt.Color;
-import java.awt.SystemColor;
 
 public class Client extends JFrame {
-	
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
