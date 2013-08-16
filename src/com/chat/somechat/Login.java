@@ -8,8 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -38,23 +39,14 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtUsername = new JTextField();
-		txtUsername.setBounds(67, 47, 164, 19);
-		contentPane.add(txtUsername);
-		txtUsername.setColumns(10);
-		
 		JLabel lblName = new JLabel("Name:");
 		lblName.setBounds(126, 20, 45, 15);
 		contentPane.add(lblName);
 		
-		lblport = new JLabel("Port:");
-		lblport.setBounds(126, 170, 45, 15);
-		contentPane.add(lblport);
-		
-		txtPort = new JTextField();
-		txtPort.setBounds(67, 197, 157, 19);
-		contentPane.add(txtPort);
-		txtPort.setColumns(10);
+		txtUsername = new JTextField();
+		txtUsername.setBounds(67, 47, 164, 19);
+		contentPane.add(txtUsername);
+		txtUsername.setColumns(10);
 		
 		lblIPAddress = new JLabel("IP:");
 		lblIPAddress.setBounds(137, 98, 24, 15);
@@ -65,11 +57,34 @@ public class Login extends JFrame {
 		txtIPAddress.setBounds(67, 125, 157, 19);
 		contentPane.add(txtIPAddress);
 		
+		lblport = new JLabel("Port:");
+		lblport.setBounds(126, 170, 45, 15);
+		contentPane.add(lblport);
+		
+		txtPort = new JTextField();
+		txtPort.setBounds(67, 197, 157, 19);
+		contentPane.add(txtPort);
+		txtPort.setColumns(10);
+		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Lo0oOL!");
+				String name = txtUsername.getText();
+				String address = txtIPAddress.getText();
+				int port = Integer.parseInt(txtPort.getText());
+				login(name, address, port);
+			}
+		});
 		btnLogin.setBounds(90, 299, 117, 25);
 		contentPane.add(btnLogin);
 	}
 
+	private void login(String name, String address, int port) {
+		dispose();
+		System.out.println("Name: " + name + "\nIP Address: " + address + "\nPort: " + port);
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
