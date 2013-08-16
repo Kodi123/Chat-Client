@@ -63,6 +63,7 @@ public class Login extends JFrame {
 		contentPane.add(lblport);
 		
 		txtPort = new JTextField();
+		txtPort.setText("4");
 		txtPort.setBounds(67, 197, 157, 19);
 		contentPane.add(txtPort);
 		txtPort.setColumns(10);
