@@ -26,6 +26,7 @@ public class Login extends JFrame {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
+			
 			e.printStackTrace();
 		}
 		
