@@ -70,7 +70,6 @@ public class Login extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Lo0oOL!");
 				String name = txtUsername.getText();
 				String address = txtIPAddress.getText();
 				int port = Integer.parseInt(txtPort.getText());
@@ -83,7 +82,8 @@ public class Login extends JFrame {
 
 	private void login(String name, String address, int port) {
 		dispose();
-		System.out.println("Name: " + name + "\nIP Address: " + address + "\nPort: " + port);
+		//System.out.println("Name: " + name + "\nIP Address: " + address + "\nPort: " + port);
+		new Client(name, address, port);
 	}
 	
 	public static void main(String[] args) {
